@@ -1,0 +1,109 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: #88ccff;
+    width: 260px;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    border-radius: 4px;
+}
+.fieldset {
+    padding: 10px 0 0 10px;
+    display: flex;
+    align-items: center;
+    &__title {
+        display: inline-block;
+        color: white;
+        font-size: 18px;
+        margin-right: 5px;
+        text-transform: uppercase;
+        &_position {
+            margin-left: 16px;
+        }
+    }
+    &__input {
+        display: none;
+        &_name {
+            display: block;
+            background-color: transparent;
+            border-top: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            width: 100%;
+            padding-left: 5px;
+            border-bottom: 1px solid #83c5f6;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    }
+    &__label {
+        width: 70px;
+        height: 40px;
+        background-color: #ff4081;
+        text-align: center;
+        border-radius: 5px;
+        margin-right: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transform: scale(1);
+        &:active {
+            transform: scale(0.90);
+            transition: transform .2s;
+        }
+    }
+    &__img {
+        width: 20px;
+        height: 20px;
+    }
+    &_name {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
+        margin-top: 30px;
+    }
+    &__button {
+        color: #fff;
+        font-size: 16px;
+        width: 170px;
+        background-color: #3f51b5;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 5px;
+        text-transform: uppercase;
+        margin-top: 15px;
+        cursor: pointer;
+        margin: auto;
+        transform: scale(1);
+        &:active {
+            transform: scale(0.90);
+            transition: transform .2s;
+        }
+    }
+    &_gender {
+        padding: 10px 30px;
+        justify-content: space-around;
+    }
+    &__gender_male,&__gender_female, &__gender_all {
+        width: 20px;
+        height: 20px;
+    }
+}
+.fieldset_sex {
+    display: flex;
+    margin-bottom: 20px;
+}
+.fieldset__reset{
+    width: 120px;
+    margin-bottom: 10px;
+    border: 1px solid blue;
+}
+
+@media(max-width:600px){
+    .sidebar {
+        margin: 0 auto;
+        position: initial;
+    }
+}

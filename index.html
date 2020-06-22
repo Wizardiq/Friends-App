@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friends APP</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<body>
+    <div class="layout">
+        <div class="sidebar">
+            <fieldset>
+                <div class="fieldset">
+                    <div class="fieldset__title fieldset__title_position">By age:</div>
+                    <input type="radio" class="fieldset__input" id="age-up" name="age" value="age-up">
+                    <label for="age-up" class="fieldset__label fieldset__label_age-up"><img class="fieldset__img" src="img/age-up.png" alt=""></label>
+                    <input type="radio" class="fieldset__input" id="age-down" name="age" value="age-down">
+                    <label for="age-down" class="fieldset__label fieldset__label_age-down"><img class="fieldset__img" src="img/age-down.png" alt=""></label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="fieldset">
+                    <div class="fieldset__title">By name:</div>
+                    <input type="radio" class="fieldset__input" id="name-up" name="name" value="name-up">
+                    <label for="name-up" class="fieldset__label fieldset__label_name-up"><img class="fieldset__img" src="img/name-up.png" alt=""></label>
+                    <input type="radio" class="fieldset__input" id="name-down" name="name" value="name-down">
+                    <label for="name-down" class="fieldset__label fieldset__label_name-down"><img class="fieldset__img" src="img/name-down.png" alt=""></label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="fieldset fieldset_name">
+                    <input type="text" class="fieldset__input fieldset__input_name" id="enter-name" name="enter-name" placeholder="enter your friend`s name">
+                    <label for="enter-name" class="fieldset__button">filter by name</label>
+                </div>
+            </fieldset>
+            <fieldset class="fieldset_sex">
+                <div class="fieldset fieldset_gender">
+                    <input type="radio" class="fieldset__gender_male" id="gender" name="gender" value="male">
+                    <div class="fieldset__gender-title">Male</div>
+                    <input type="radio" class="fieldset__gender_female" id="gender" name="gender" value="female">
+                    <div class="fieldset__gender-title">Female</div>
+                    <input type="radio" class="fieldset__gender_all" id="gender" name="gender" value="All" checked>
+                    <div class="fieldset__gender-title">All</div>
+                    
+                </div>
+                <label for="gender" class="fieldset__button">filter by sex</label>
+            </fieldset>
+            <button class=" fieldset__button fieldset__reset">
+                Reset
+            </button>
+        </div>
+        <div class="content"></div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
