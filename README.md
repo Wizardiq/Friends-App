@@ -1,4 +1,4 @@
 # Friends-App
-In process
+In process!
 
-# Demo: wizardiq.github.io/Friends-App/
+Demo: <a href="https://wizardiq.github.io/Friends-App/" target="_blank">Friends App Project</a>
