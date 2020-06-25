@@ -14,18 +14,20 @@
             <fieldset>
                 <div class="fieldset">
                     <div class="fieldset__title fieldset__title_position">By age:</div>
-                    <input type="radio" class="fieldset__input" id="age-up" name="age" value="age-up">
+                    <input type="radio" class="fieldset__input fieldset__input_age-up" id="age-up" name="age" value="age-up">
                     <label for="age-up" class="fieldset__label fieldset__label_age-up"><img class="fieldset__img" src="img/age-up.png" alt=""></label>
-                    <input type="radio" class="fieldset__input" id="age-down" name="age" value="age-down">
+
+                    <input type="radio" class="fieldset__input fieldset__input_age-down" id="age-down" name="age" value="age-down">
                     <label for="age-down" class="fieldset__label fieldset__label_age-down"><img class="fieldset__img" src="img/age-down.png" alt=""></label>
                 </div>
             </fieldset>
             <fieldset>
                 <div class="fieldset">
                     <div class="fieldset__title">By name:</div>
-                    <input type="radio" class="fieldset__input" id="name-up" name="name" value="name-up">
+                    <input type="radio" class="fieldset__input fieldset__input_name-up" id="name-up" name="name" value="name-up">
                     <label for="name-up" class="fieldset__label fieldset__label_name-up"><img class="fieldset__img" src="img/name-up.png" alt=""></label>
-                    <input type="radio" class="fieldset__input" id="name-down" name="name" value="name-down">
+
+                    <input type="radio" class="fieldset__input fieldset__input_name-down" id="name-down" name="name" value="name-down">
                     <label for="name-down" class="fieldset__label fieldset__label_name-down"><img class="fieldset__img" src="img/name-down.png" alt=""></label>
                 </div>
             </fieldset>
@@ -36,18 +38,19 @@
                 </div>
             </fieldset>
             <fieldset class="fieldset_sex">
+                <div class="fieldset__title fieldset__title_sex">Filter by sex</div>
                 <div class="fieldset fieldset_gender">
-                    <input type="radio" class="fieldset__gender_male" id="gender" name="gender" value="male">
+                    <input type="radio" class="fieldset__gender_male" id="gender-male" name="gender" value="male">
                     <div class="fieldset__gender-title">Male</div>
-                    <input type="radio" class="fieldset__gender_female" id="gender" name="gender" value="female">
+
+                    <input type="radio" class="fieldset__gender_female" id="gender-female" name="gender" value="female">
                     <div class="fieldset__gender-title">Female</div>
-                    <input type="radio" class="fieldset__gender_all" id="gender" name="gender" value="All" checked>
+
+                    <input type="radio" class="fieldset__gender_all" id="gender-all" name="gender" value="All" checked>
                     <div class="fieldset__gender-title">All</div>
-                    
                 </div>
-                <label for="gender" class="fieldset__button">filter by sex</label>
             </fieldset>
-            <button class=" fieldset__button fieldset__reset">
+            <button class="fieldset__button fieldset__reset">
                 Reset
             </button>
         </div>

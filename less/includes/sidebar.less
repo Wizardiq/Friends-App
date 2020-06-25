@@ -24,6 +24,19 @@
     }
     &__input {
         display: none;
+        &_age-up:checked + label {
+            background-color: #9052b9;
+        }
+        &_age-down:checked + label {
+            background-color: #9052b9;
+        
+        }
+        &_name-up:checked + label {
+            background-color: #9052b9;
+        }
+        &_name-down:checked + label {
+            background-color: #9052b9;
+        }
         &_name {
             display: block;
             background-color: transparent;
@@ -81,6 +94,10 @@
             transform: scale(0.90);
             transition: transform .2s;
         }
+    }
+    &__title_sex {
+        text-align: center;
+        margin: 20px;
     }
     &_gender {
         padding: 10px 30px;
