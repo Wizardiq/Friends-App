@@ -14,36 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
       assignUsers(users);
     });
 
-    function sortAgeUp(a, b){
-      return a.dob.age-b.dob.age;
-    }
-    
-    function sortAgeDown(a, b){
-      return b.dob.age-a.dob.age;
-    }
-
-    function sortNameUp(a, b) {
-      let nameA=a.name.first, nameB=b.name.first;
-      if (nameA < nameB) { 
-        return -1;
-      }
-      if (nameA > nameB){
-        return 1;
-      }
-      return 0;
-    }
-
-    function sortNameDown(a, b){
-      let nameA=a.name.first, nameB=b.name.first;
-      if (nameB < nameA) { 
-        return -1;
-      }
-      if (nameB > nameA){
-        return 1;
-      }
-      return 0;
-    }
-
     function assignUsers(users){
       usersBlock.innerHTML = "";
       const content = document.querySelector(".content");
@@ -87,63 +57,72 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     document.addEventListener("change",(e) => {
-      let usersSorted = users;
-      
-      let ageUp = e.target.classList.contains("fieldset__input_age-up");
-      let ageDown = e.target.classList.contains("fieldset__input_age-down");
+      let usersFiltered = users;
+      let target = e.target;
+      let value = e.target.value;
 
-      let nameUp = e.target.classList.contains("fieldset__input_name-up");
-      let nameDown = e.target.classList.contains("fieldset__input_name-down");
+      let ageUp = target.classList.contains("fieldset__input_age-up");
+      let ageDown = target.classList.contains("fieldset__input_age-down");
 
-      let nameFilter = e.target.classList.contains("fieldset__input_name");
+      let nameUp = target.classList.contains("fieldset__input_name-up");
+      let nameDown = target.classList.contains("fieldset__input_name-down");
 
-      let genderMale = e.target.classList.contains("fieldset__gender_male");
-      let genderFemale = e.target.classList.contains("fieldset__gender_female");
-      let genderAll = e.target.classList.contains("fieldset__gender_all");
+      let nameFilter = target.classList.contains("fieldset__input_name");
+
+      let genderMale = target.classList.contains("fieldset__gender_male");
+      let genderFemale = target.classList.contains("fieldset__gender_female");
 
       if(ageUp) {
-        usersSorted.sort(sortAgeUp);
+        usersFiltered.sort((a, b) => {
+          return a.dob.age-b.dob.age;
+        });
       }
 
       if(ageDown) {
-        usersSorted.sort(sortAgeDown);
+        usersFiltered.sort((a, b) => {
+          return b.dob.age-a.dob.age;
+        });
       }
 
       if(nameUp){
-        usersSorted.sort(sortNameUp);
+        usersFiltered.sort((a, b) => {
+          let nameA=a.name.first, nameB=b.name.first;
+          return nameA.localeCompare(nameB);
+        });
       }
 
       if(nameDown){
-        usersSorted.sort(sortNameDown);
+        usersFiltered.sort((a, b) => {
+          let nameA=a.name.first, nameB=b.name.first;
+          return nameB.localeCompare(nameA);
+        });
       }
 
       if(nameFilter) {
-        console.log(e.target.value)
+        usersFiltered = users.filter((el) => {
+          let valueWithNoWhitespace = value.replace(/\s/g, '');
+          let userName = `${el.name.first.toLowerCase()} ${el.name.last.toLowerCase()}`
+          return userName.includes(valueWithNoWhitespace.toLowerCase());
+        });
       }
 
       if(genderMale) {
-        usersSorted = users.filter(el => el.gender === "male");
+        usersFiltered = users.filter(el => el.gender === "male");
       }
 
       if(genderFemale) {
-        usersSorted = users.filter(el => el.gender === "female");
+        usersFiltered = users.filter(el => el.gender === "female");
       }
-
-      if(genderAll) {
-        // usersBlock.innerHTML = "";
-        // assignUsers(users);
-      }
-      console.log(usersSorted)
-      assignUsers(usersSorted);
+      assignUsers(usersFiltered);
     });
 
-    // document.addEventListener("click", (e) => {
-    //   let resetButton = e.target.classList.contains("fieldset__reset");
+    document.addEventListener("click", (e) => {
+      let resetButton = e.target.classList.contains("fieldset__reset");
 
-    //   if(resetButton) {
-    //     usersBlock.innerHTML = "";
-    //     assignUsers(users);
-    //   }
-    // })
+      if(resetButton) {
+        usersBlock.innerHTML = "";
+        assignUsers(users);
+      }
+    })
 
 });

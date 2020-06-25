@@ -3,7 +3,7 @@
     flex-direction: column;
     background-color: #88ccff;
     width: 260px;
-    position: fixed;
+    float: left;
     z-index: 1;
     overflow-x: hidden;
     border-radius: 4px;
@@ -118,9 +118,9 @@
     border: 1px solid blue;
 }
 
-@media(max-width:600px){
+@media(max-width:576px){
     .sidebar {
         margin: 0 auto;
-        position: initial;
+        float: none;
     }
 }
